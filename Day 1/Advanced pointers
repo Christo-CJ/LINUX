@@ -137,3 +137,47 @@ int(*def(int m,int n,int(*p)(int,int)))(int,int)
 {
 return mul;
 }
+
+
+using typedef
+-------------
+typedef int(*ptr)(int,int);
+void main()
+{
+int i=10,j=20,k;
+PTR P;
+k=p(i,j);
+printf("k=%d\n",k);
+}
+
+
+typedef in callbackfunction
+----------------------------
+typedef int(*FPTR)(int,int);
+int callbackfunction(int,int,FPTR)
+void main()
+{
+int i=20,j-10,k;
+FPTR p;
+p=callbackfunction(i,j,sum);
+k=p(i,j);
+printf("%d\n",k);
+}
+
+
+typedef in def fun
+------------------
+typedef int(*FPTR)(int,int);
+FPTR def (int,int,FPTR)
+void main()
+{
+int i=10,j=20,k;
+FPTR P;
+P=def(i,j,sum);
+k=p(i,j);
+printf("%d",k);
+}
+FPTR def(int m,int n,FPTR Q)
+{ 
+return sum;
+}
