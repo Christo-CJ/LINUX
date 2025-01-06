@@ -3,7 +3,7 @@ Function Pointer
 syntax
        return_typer(*variable_name)(arguments);
 
-#include<stdio.h>
+#include<stdio.h>  
 int sum(int,int);
 int sub(int,int);
 int mul(int,int);
