@@ -1,0 +1,102 @@
+Function Pointer
+---------------
+syntax
+       return_typer(*variable_name)(arguments);
+
+#include<stdio.h>
+int sum(int,int);
+int sub(int,int);
+int mul(int,int);
+int div(int,int);
+
+int main()
+{
+int j=10,i=2,k;
+int (*p)(int,int);   //function pointer declaration
+
+    // Using function pointer for sum operation
+    p = sum;  // Pointing to sum function
+    k = p(j, i);  // Calling sum using the function pointer
+    printf("Sum: %d\n", k);
+
+    // Using function pointer for subtraction
+    p = sub;  // Pointing to sub function
+    k = p(j, i);  // Calling subtraction using the function pointer
+    printf("Subtraction: %d\n", k);
+
+    // Using function pointer for multiplication
+    p = mul;  // Pointing to mul function
+    k = p(j, i);  // Calling multiplication using the function pointer
+    printf("Multiplication: %d\n", k);
+
+    // Using function pointer for division
+    p = div;  // Pointing to div function
+    k = p(j, i);  // Calling division using the function pointer
+    printf("Division: %d\n", k);
+
+    return 0;
+}
+
+
+int sum(int a, int b)
+{
+    return a + b;
+}
+
+int sub(int a, int b)
+{
+    return a - b;
+}
+
+int mul(int a, int b)
+{
+    return a * b;
+}
+
+int div(int a, int b)
+{
+    if (b != 0) {
+        return a / b;  // Returning division result
+    } else {
+        printf("Error: Division by zero\n");
+        return 0;  // Return 0 if division by zero
+    }
+}
+
+
+
+CALL BACK FUNCTION
+-------------------
+
+int callbackfunction (int,int,int(*)(int,int));
+int main()
+{
+int i,j,k;
+i=10,j=2;
+k=callbackfunction(i,j,sum);
+printf("k=%d\n",k);
+}
+int callbackfunction(int m,int n,int(*p)(int,int)
+{
+int r;
+r=(*p)(m,n)
+return r;
+}
+
+if any function taking another function address as argument such functions are called callback function.
+
+.Design a functtion which returns sum function addres
+
+int (*abc(void))(int,int);
+void main()
+{
+int i=10,j=20,k;
+int (*p)(int,int);
+p=abc();
+l=(*p)(i,j);
+printf("k=%d\n",k);
+}
+int(*abc(void))(int,int)
+{ 
+return sum;
+}
