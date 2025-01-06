@@ -1,0 +1,76 @@
+Operating Syctem concepts with Linux:
+------------------------------------
+1.Process and process management
+2.File and file management
+3.Memory and Memory Management
+4.Signeal Handling
+5.IPC Inter Process Communication
+6.Process synchronization
+7.Threads
+8.Shell scripting
+
+
+what is OS?
+Os is a software with qualities of multitasking,managing resource effectively,resource allocation and resource managing.
+
+Why Linux?
+It will support  for around 20 architeecture and linux is free source code
+
+Embedded oS/Embedded Linux
+
+Os is a software that control the hardware.
+
+                             OS
+                --------------------------------
+                |                               |
+    Applications(optional)                Services(kernel)
+                                        -process management
+                                        -memory management
+                                        -signal management
+                                        -Network mangement
+                                        -Thread management (compulsory)
+                                       services are sometime drivers
+
+What are the components of OS?
+1)application
+2)services
+kernel is called CORE of an Operating System
+Applications are optional services are mandatory
+
+
+
+Booting process of Linux:
+
+1.BIOS:Basic Input Output System
+      present in ROM chip manufacture burns are program into ROM chip is called BIOS
+      BIOS will check that before loading OS,it will check if basic Input/Output system like keyboard,harddisk,RAM etc..is present or not,then only proceed ahead otherwise not proceed.
+
+2.If everything ok Then BIOS will run one program called MBR(Master Boot Record)(a file of 12 bytes)present inthe starting portion of harddisk(HDD).
+  MBR:It is loaded at first sector of the bootable disk.MBR is less than 512 byte
+      contains information about GRUB loader/loader
+      every OS has individual loader
+      linux lifo,windows nt,Here GRUB
+
+3.WBR executes GRUB (Grand Unified Boot Loader)
+4.GRUB will load kernel
+  Can be used for any OS
+  Multiboot is the speciality
+  Loads the preferd kernel image
+  Displays option
+
+5.Kernel Loads all the services
+  (load some temporary file system mount the file system)
+   Mount root files system
+   Kernel executes the/sbin /init program
+   In simple term as loaded into RAM
+
+6.Its starts one service called Init
+  started after all the manager in kernel has started
+  first program starts in user space
+  process id is alwways 1 since start in user space
+  Init identifier the default initials from /etc/initial and uses that to load appropriate program
+
+7.Run level program:
+init process initiates all services .All the services(drivers)are loaded into the RAM.
+
+
