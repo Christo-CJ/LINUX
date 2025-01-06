@@ -24,7 +24,7 @@ int (*p)(int,int);   //function pointer declaration
     k = p(j, i);  // Calling subtraction using the function pointer
     printf("Subtraction: %d\n", k);
 
-    // Using function pointer for multiplication
+    // Using function pointer for multiplication   
     p = mul;  // Pointing to mul function
     k = p(j, i);  // Calling multiplication using the function pointer
     printf("Multiplication: %d\n", k);
