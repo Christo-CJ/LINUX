@@ -100,3 +100,40 @@ int(*abc(void))(int,int)
 { 
 return sum;
 }
+
+abc is a function which takes nothing returns a pointer to a function which takes two integer as argument and return integer.
+
+
+char*9*mno(int,char))(int,float);
+
+mno is a function which takes two arguments one integer and charactre as arguments and return a pointer to function which takes two arguments those are int and float andreturns char pointer.
+
+function mno returns
+char *(*p)(int,float);
+p=mno(10,'a'); //when p is a function pointer which holds the address returned by mno
+char *q;
+q=(*p)(10,202);//calling the returned function through function pointer
+
+int(*def(int,int,int(*)(int,int)))(int,int);
+
+def is a funtion which takes arguments two int and a function addres and returns pointer to function which takes two int as arguments and returns int.
+
+int (*p)(int,int);
+p=(*def)(10,20,sum);
+
+
+code.c
+
+int(*def(int,int,int(*p)(int,int)))(int,int)
+int main()
+{
+int j=10,k;
+int (*p)(int,int);
+p=(*def)(i,j,mul);
+k=(*p)(i,j);
+printf("k=%d\n",k);
+}
+int(*def(int m,int n,int(*p)(int,int)))(int,int)
+{
+return mul;
+}
