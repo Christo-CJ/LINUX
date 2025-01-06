@@ -12,8 +12,8 @@ int div(int,int);
 int main()
 {
 int j=10,i=2,k;
-int (*p)(int,int);   //function pointer declaration
-
+int (*p)(int,int);   //function pointer declaration  
+ 
     // Using function pointer for sum operation
     p = sum;  // Pointing to sum function
     k = p(j, i);  // Calling sum using the function pointer
