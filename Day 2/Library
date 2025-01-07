@@ -1,0 +1,101 @@
+.Library is a collection of predefined functions definitions
+.Library is a collection of object files(till assembly stage)
+.Library is precompiled code
+
+There are two types of library's
+  * static library
+  * dynamic library
+
+
+          Static Library                                    Dynamic Library
+        ------------------                                 -----------------
+1. Helps in static linking                                  1. Dynamic linking
+                                                                . load time linking
+                                                                . Run time linking
+2. Archieve files                                           2. shared objects or dll files(dynamic linking library)
+3. Extention of static library  is .a                       3. for dynamic library  .so / .dll
+   eg: libc.a  //all c files extension lib                     eg: libc.so
+       libm.a  //math related                                      libm.so  
+       libabc.a      //userdefined lib                             libmm.so   used defined
+   * GCC supports both static and dynamic library
+ 
+      .o->                                                         .o-> 
+             linker -> a.out                                            linker->a.out
+      .a->                                                        .so->
+ 
+4. If linker is linking with static library linker will     4. if linker is linking with dynamic memory linker will
+   copy necessary function definitions into the                copy the references of that function into this executable  
+   executable                                                  file.
+5. Size of executable file is more(def is copied)           5. Size of executable file is less(only addr)
+6. This executable file doesnt required                     6. The executable file required dependancy library   
+    dependancy library while executing                         while executing
+
+
+
+.ldd lists the list of dependencies it need during execution.
+size used to get size of executable file
+.To get static library cc -static -o file
+.Dependancies are copied into ram during execution
+.By default all executable file in c are dynamically linked
+.There are two types of executables files
+   1.statically linked executable files
+   2.Dynamically linked executable files
+
+.File command can be used to know whether file is sattically or dynamically linked
+   file filename
+
+Command nm filename
+display function symbols /can be used to check whether function definition present in executable file.
+.Library can be shared by more than one program in the ram (.so,shared object)
+.Loader will keep a count for how many programs are using the code and will keep count and all will unloaded at end of proceess.
+
+
+Command to create static library
+--------------------------------
+$ar -rcsv libabc.a sum.o mul.o print.o
+
+r-replace (library already exists find and replace)
+c-create
+v-verbus made given information about ongoing process(prints on screen)
+s-symbol table
+
+$ar -t libabc.a
+sum.o                     //display .o file in library
+mul.o
+print.o
+
+$ar -d libabc.a
+mul.o                     //delete first.o file
+print.o
+
+$ar -r libabc.o sum.o
+sum.o
+mul.o
+print.o
+
+How to compile our source code with this library
+
+                        $cc p1.c libabc.a
+                              |   | 
+                             .i   |
+                              |   |
+                             .s   |
+                              |   |
+                             .o   |
+                              |   |       
+                              v   v      -->OS
+                                         -->libc.so
+                              linker     -->OS  
+                                |
+                                v
+                              a.out
+a.out contains definition of 
+main
+sum
+mul
+print
+
+libc.a is not loaded in the ram at runtime since it is a static library def is copied into executable during compile time.
+The other 3 OS,libc.so,OS are loaded into ram at runtime.
+
+
