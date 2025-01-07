@@ -1,0 +1,95 @@
+What is the meaning of Static linking and dynamic linking?
+
+linking or binding is a concept related to calling function and called function
+
+static linking:
+If calling function knows where exactly call function present at compile time then the linking between them is called as Static linking.
+
+Dynamic linking:
+If calling function knows where exactly call function presents at load time then linking between them is called dynamic load time linking.
+if calling function knows where exactly call function presents at run time then linking between them is called dynamic run time linking.
+
+To achieve runtime binding
+
+#include <dlfcn.h>
+void * dlopen(const char * filename,int flag);
+cahr * dlerror(void);
+void * dlsys(void * handle,const char * symbol);
+int dlclose(void * handle);
+ 
+link with -ldl
+cc file_name.out -ldl
+
+
+dlopen is useful for opening the dynamic library
+dlerror is useful for displaying the proper error message on the screen
+dlsym is useful for getting the symbol addr/function address from the library
+dlclose is useful for closing the library
+
+
+Dynamic runtime binding of library
+
+#include <stdio.h>
+#include <dlfcn.h>
+
+void main()
+{
+void *p;
+int(*f)(int,int);
+int i=10,j=20,op;
+scanf("%d",op);
+
+if(op==1)
+{
+  p=dlopen("./libmno.so",RTLD_LAZY);
+     if(p===0)
+{
+printf("%s",dlerror());
+return;
+}
+fp=dlsym(p,"sum");
+if(p==0)
+{
+printf("%s",dlerror());
+return;
+}
+k=(*fp)(i,j);
+printf("k=%d",k)
+dlclose(fp);
+}
+
+if(op==2)
+{
+p=dlopen("./libmno.so",RTLD_LAZY);
+  if(p==0)
+   {
+    printf("%s",dlerror());
+    return;
+    }
+fp=dlsym(p,"mul");
+if(p==0)
+{
+printf("%s",dlerror());
+return;
+}
+k=(*fp)(i,j);
+printf("k=%d\n",k);
+dlclose(fp);
+}
+}
+
+
+RTLD_LAZY
+loads library into virtual ram(part&hdd) at the time of opening library.
+later lib is loaded into RAM if function address is fetched at dlsym.
+
+RTLD_NOW
+directly loads the code into RAM
+compiletime/load time  : faster max space less code 
+Runtime: slower,saves RAM space,bigger code
+
+Two types of executable files 
+statically linked exe file and dynamically linked exe file.
+
+
+
