@@ -99,3 +99,38 @@ libc.a is not loaded in the ram at runtime since it is a static library def is c
 The other 3 OS,libc.so,OS are loaded into ram at runtime.
 
 
+
+How to create Dynamic Library
+-----------------------------
+$ cc -shared -o libabc.so sum.o mul.o print.o
+
+compile and link with dynamic library
+$ cc p1.c ./libabc.so
+
+                      $cc p1.c libmno.so
+                              |   | 
+                             .i   |
+                              |   |
+                             .s   |
+                              |   |
+                             .o   |
+                              |   |       
+                              v   v      -->OS
+                                         -->libc.so
+                              linker     -->OS  
+                                |
+                                v
+                              a.out
+requires supporting dynamic library is needed
+
+static library is used when there is no OS
+All  dependancy file are present in a single file
+.out fule required
+
+dynamic library sypport with OS
+have to provide the dependancy library
+update can be done through library or exe file only containsreference
+old .out can be used.
+
+
+
