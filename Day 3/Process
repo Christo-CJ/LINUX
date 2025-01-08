@@ -1,0 +1,89 @@
+When an executable file is loaded into the ram for execution ,a process is created.
+A process is an active entity.
+.The size of an exe is less than a process since exe only contains Data and code but process contain stack code and data heap.
+.Life of file is permanent of life of process untill a instructions are executed.Life of process start at loading for execution and ends when all instructions are executed.
+.If ram contains more than one process for execution then it is alled multiprocessing 
+.Environment are of two types
+  .sequentially execution environment
+  .concurrent execution environment
+.In sequential after total completing p1 process(two process eg p1and p2) then only p2 startsor gets CPU time. such environment with multiple sequential execution process
+ These such are called sequentially multiprocessing environment.
+.When executable file is loaded into RAM it becomes process the apart from code and data stack and heap is attached.ie process size if more.
+.In Concurrent multiprocessing environment CPU time is going to be shared to multi process.
+.The disadvantage of sequential multiprocesing environment is after completion of first process remaining process will get CPU time.
+.In case first process is long running process remainsing process will never ever gets CPU time to execute.
+
+
+WHat is process manager?
+Process manager is one service which is present in kernel space which is responsible for managing the process of CPU.
+
+with respective hardware and software there are two types of multiprocessing
+  1.Hardware multiprocessing
+  2.Software multiprocessing
+
+
+hardware multiprocessing
+------------------------
+
+application1  App2  App3
+     |         |      |  OS
+   CPU1      CPU2    CPU3
+
+
+Software multiprocessing
+------------------------
+App1   App2    App3
+   |     |      |   OS
+     C   P   U 
+
+software multiprocessing also known as multiprogramming
+compared to hardware multiprocessing in software multiproccessing proces manager role is important because CPU is shared across all the process.
+
+Foreground and Background process
+--------------------------------
+1. getpid ,getppid
+
+ #include<sys/types.h>
+ #include<unistd.h>
+ pid_t getpid(void);
+ pid_t getppid(void);
+
+ getpid returns process id of the calling process
+ getppid returns process id of the parent of the calling process
+
+ ./a.out &   to run the code in the background in current terminal
+ps  listd the background process
+
+[1]  2061 -process id assigned by process manger 
+ |
+job id
+assigned by terminal
+
+fy  brings the last background process to foreground
+fy1  brings the process with job id 1 to the foreground
+
+with ./a.out the process is created in foreground till that process complete its excution .we cannot give any command in the terminal.
+But there is an option to run the process in background use & symbol while executing the command
+
+./a.out &
+
+
+
+Basic commands
+--------------
+ps   - lists current process in current terminal
+PS-e - lists of process in the system
+ps-l - long list of process in current terminal
+fy   - to move the background process to foreground 
+size - displays size of object file/executable file
+
+kill is a command to send a signal to a process (interupt)
+kill -signal_no pid
+
+signal_no  9 foreceful killinng process
+
+process ID max value 32767
+after 32767 the pid starts from 300,1 -299 are demon/a system process
+
+
+
