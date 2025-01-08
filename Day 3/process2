@@ -1,0 +1,122 @@
+What is BASH?
+Bash is nothing but shell.
+
+shell
+   -bash
+   -sh
+   -Ksh
+
+   shell is a command interpreter
+
+  User   ->  shell  -> OS  -> hardware
+          |          |  |_> in RAM will create a child process bash is parent of it.
+      command        |
+               interacts with OS on behalf of you
+
+
+  shell is an application not a service
+  PID <= 32767(max value)
+
+   to find it vi proc/sys/kernel/pid_max
+   32767   (0-32768)
+
+
+   Shell is a user programme which is used to interact with operating system in command based environment
+   shell is a command interpreter that executes the commands read from std input file
+   shell is not a part of the kernel its an application.
+   eg shell sh,bash,ksh
+
+   shell takes input from user and gives to OS and OS make the comand as process and make the shell as parent 
+   cat/etc/shells - how many shells are present
+
+
+   Response time
+   -------------
+   The time gap between the process is loaded into ram of first instruction executed by cpu.
+   response time less is good environment.
+
+   Starvation time
+   ---------------
+   A process in its life cycle how mucstarvated(stopped) without executed by CPU.
+   In concurrent processing environment while executing one process other process are starvated.
+   p1 is executing p2 gets starvated
+
+   Turnaround time
+   ---------------
+   Time gap between process loaded into the ram and its execution completed
+   turnaround time less is good.
+
+   Throughput
+   ----------
+   The number of process that are completed per unit time is called Throughput
+   throughput is more is good.These parameters highly depend on hardware.
+
+
+   States of processes
+   -------------------
+   the process in its lifetime always maynot executed by CPU multiprogramming environment
+   If the process is not executing by CPU the process may in the below state
+     1.Ready state
+     2.wait state
+     3.Delay state
+     4.suspend state
+
+     If the process is executing by the CPU then it is in running state.
+
+
+     Ready state
+     -----------
+     If a process is ready for execution but not executing then the process goes to ready state
+     If a process purely waiting for CPU time slot to get it goes to ready state.
+
+     wait state
+     ----------
+     If a process is waiting for external event to finish goes to wait state
+     eg scanf
+
+     Delay state
+     ----------
+     If a process intentionally goes to the delay using sleep function then process goes to delay state
+
+     suspended state
+     ---------------
+     If a process is suspended because of some signal then the process goes into the suspended state.
+
+
+     #include "header.h"
+     void main()
+     {
+     printf("hello world pid=%d ppid=%d ",getpid(),getppid());
+     while(1);
+     }
+
+     Ready ->Run->Ready->Run...
+
+
+     void main()
+     {
+     int num;
+     printf("pid=%d ppid=%d",gepid(),getppid());
+     printf("Enter number);
+     scanf("%d",&num);
+     while(1);
+     }
+
+     Ready->Run->wait-Ready->run->Ready->run...
+
+     void main()
+     {
+     printf("pid=%d ppid=%d",getpid(),getppid());
+     printf("before");
+     delay(10);
+     printf("after");
+     while(1);
+     }
+
+     Ready->Run->delay->ready->Run->ready->run...
+
+     delaystate can be meseaured as it is intentionallly ,wait state time cannot be measured
+
+
+      kill -19 is for suspending signal
+      kill -18 to resume the process
