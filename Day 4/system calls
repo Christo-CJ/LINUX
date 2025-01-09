@@ -1,0 +1,29 @@
+system calls vs library function
+----------------------------------
+
+library                                              system call
+-------                                              -----------
+.library funtions are compiler supported functions    .system calls are os supported functions
+.(API)application programing                          .(SCI)system call interface
+.most library functions on fail return 0              .most sys call return 1 on fail
+.working procedure with API is called application     .working procedure with sci is called as system programing
+  programing         .
+.library functions are slower but process calling     .They are faster the process calling the system calls execute
+  the library functions executes faster                 slower
+.library functions are programmer friendly and        .systems calls are frindly and generic
+  specific to task  
+.library functions executes in usr space              .system calls executes in kernel space
+.library functions can be debugged using debugger     .system calls cannot be debugged as executded by kernel space but you can check rerurn value and error number to avoid failure
+
+
+
+for file operations data is read from file with help of system calls during the time only are goes into kernel space
+since data in buffer each time it doesnt need to access kernel
+
+Accesing kernel takes max time
+
+with system calls each time it has to go to kernel space so process caling executes slower
+
+
+man page of library function is 3(compilre supported)
+man page of SCi is 2(OS supported).
