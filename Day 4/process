@@ -1,0 +1,40 @@
+Process control block(PCB)
+--------------------------
+
+whenever a process is created for every process ,process manager will create a lookup table or data structure called as PCB in kernel space
+contains information about process
+
+process in userspace
+It is a data structure which contains the information about the process.
+
+1.process state
+2.process id parent process id
+3.program counter
+4.CPU register
+5.CPU scheduling information
+6.Memory management information
+7.list of open file descriptors
+8.Accounting information
+9.I/O status information
+
+Context switching
+----------------
+Each time a process loads into for execution at allocated time the data/PCB is loadded into CPU register , at expiration of time slot the current data in CPU register.
+such as PC,SP are stored in lookup table of corresponding process(saving) and load the allocated PCB.such is called load and unload in context switch.
+.A context switch is a mechanism to store and restore the state or context of CPU in process control Block (PCB) so that process execution can be resumed from the same pointy at later time.
+.Using the technique a context enable multiple process to share a single CPU.
+.Context switching is an essential part of multitasking OS future.
+.The state from the current running process is stored into respected PCB after this the state for the process to run next is loaded from its own PCB to CPU register.
+
+when context switch happens?
+normally when the time slice expire context switch happens.
+there is a chance before time slice expiring also context switch happens.
+Reasons are:
+ process left the CPU because
+ 1.scanf,waiting state
+ 2.delay,left because of delay
+ 3.suspend,because its suspended
+ 4.termination,left because terminated
+
+Time between the process led finishing one process and starting execution of next process is used for loading and unloading ie,context swicthing.
+
