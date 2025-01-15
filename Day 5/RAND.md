@@ -17,8 +17,8 @@ If srand is not used the rand function will automatically seeded with '1'.
 
 stdlib.h
 --------
-#define RAND_MAX 2147483647
-#define EXIT_FAILURE 1
-#define EXIT_SUCCESS 0
+#define RAND_MAX 2147483647  
+#define EXIT_FAILURE 1  
+#define EXIT_SUCCESS 0  
 
 
