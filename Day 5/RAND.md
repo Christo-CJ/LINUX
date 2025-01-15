@@ -1,5 +1,5 @@
 # Rand and Srand  
-
+ 
 ## header 
 ```bash 
 #include<stdlib.h>
