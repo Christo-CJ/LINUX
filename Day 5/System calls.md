@@ -29,9 +29,17 @@ when a proces is calling a system function intyernally there are two more proces
 - sh
 - the command you passed to the system
 
-  bash -> a.out
-               - hello
-               - system -> sh  -> ls
-                      ^             ^ 
-                      |_____________|
+bash creates a.out  
+a.out  
+- hello
+- system
+     - sh
+     - ls
+
+sh parent is a.out  
+system is a blocking function untill complete its execution
+  
+ps -e | grep pts/terminal number
+
+system code puts the process into waitstate untill the completion of command.
     
