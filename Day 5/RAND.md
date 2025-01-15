@@ -1,4 +1,4 @@
-# Rand and Srand
+# Rand and Srand  
 
 ## header 
 ```bash 
