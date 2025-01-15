@@ -1,5 +1,5 @@
 //? write a program to generate 5 rand number
-#include<stdlib.h>
+#include<stdlib.h>  
 void main()
 {
   int a[5];
