@@ -143,9 +143,9 @@ It will only go out from buffer if only
    int r;
    printf("hello %d\n",getpid(),r);
    while(1);
-   }
-   output
-   Hello 3238
-   hi 3238 r=3239
-   hi 3239 r=0
+   }   
+   output   
+   Hello 3238  
+   hi 3238 r=3239   
+   hi 3239 r=0   
    
