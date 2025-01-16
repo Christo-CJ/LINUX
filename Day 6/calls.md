@@ -1,6 +1,6 @@
 1. How many process are created?  
 2. How many command executed?
-3. Are they executed sequentially/concurrently   
+3. Are they executed sequentially/concurrently      
 
 bash         
 a.out
