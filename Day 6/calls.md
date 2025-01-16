@@ -12,7 +12,7 @@ a.out
 1. 5 process excluding bash   
 2. Two ls and cal
 3. sequntially
-
+  
 ## perror(3)
 
 perror - prints system error messages
