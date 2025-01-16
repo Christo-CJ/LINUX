@@ -23,7 +23,7 @@ void perror(const char *s);
 ```
 
 ```bash
-#include"header.h"
+#include"header.h" 
 void main()
 {
 FILE *fp;
