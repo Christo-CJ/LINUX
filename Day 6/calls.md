@@ -2,7 +2,7 @@
 2. How many command executed?
 3. Are they executed sequentially/concurrently
 
-bash   
+bash     
 a.out
  - hello
  - system  ->sh  ->ls
