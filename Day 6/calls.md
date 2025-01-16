@@ -9,7 +9,7 @@ a.out
  - system  ->sh  ->cal
  - hw
 
-1. 5 process excluding bash
+1. 5 process excluding bash   
 2. Two ls and cal
 3. sequntially
 
