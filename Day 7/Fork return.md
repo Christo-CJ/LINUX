@@ -14,7 +14,7 @@ printf("hi %d r=%d \n",getpid(),r);
 while(1);
 }
 ```
-```
+``` 
 #output
 hello 3238
 hi 3238 r=3239
