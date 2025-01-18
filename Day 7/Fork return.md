@@ -60,7 +60,7 @@ if(fork()) //parent
 else  //child  
 {}
 
-**Q ** .   
+**Q** .   
 ```c
 #include<header.h>
 void main()
