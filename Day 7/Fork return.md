@@ -29,7 +29,7 @@ int r;
 printf("hello\n");
 r=fork();
 if(r==0)
-printf("child process\n")
+printf("child process\n") 
 else
 printf("parent process\n")
 while(1);
