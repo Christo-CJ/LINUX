@@ -15,7 +15,7 @@ printf("In child pid=%d ppid=%d\n",getpid(),getppid());
 }
 else
 {
-printf("In parent pid=%d,getpid());
+printf("In parent pid=%d,getpid());  
 sleep(10);
 printf("parent ecec ended\n");
 }
