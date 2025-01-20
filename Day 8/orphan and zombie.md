@@ -13,7 +13,7 @@ printf("In child pid=%d ppid=%d\n",getpid(),getppid());
 sleep(20);
 printf("In child pid=%d ppid=%d\n",getpid(),getppid());
 }
-else
+else  
 {
 printf("In parent pid=%d,getpid());  
 sleep(10);
