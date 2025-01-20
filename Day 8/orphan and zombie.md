@@ -25,7 +25,7 @@ printf("parent ecec ended\n");
 Child execution is completed parent is still executing then child becomes zombie.
 A Zombie is a dead process which does not have any pending instructions to execute.    
 It is in defunctional state(no functionality)
-When the child completes before parent the kernel deals with this situation by turning the child into zombie.
+When the child completes before parent the kernel deals with this situation by turning the child into zombie.  
 
 The reason why zombie process is creadted that parent should called the exit status of its child,once parent gets the exit status of child process manager removes the child from zombie status.  
 
