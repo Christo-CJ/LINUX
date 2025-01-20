@@ -1,7 +1,7 @@
 The `Orphan or zombie process` these process are related with child process.  
 The lifetime of parent process and child process ususally not the same.  
 Parent execution is completed and child is still executing here the child becomes Orphan.    
-The Orphaned child is adopted by init,after a childs parent terminates a call to get ppid will return value 1.
+The Orphaned child is adopted by init,after a childs parent terminates a call to get ppid will return value 1.  
 
 ```c
 #include"header.h"
