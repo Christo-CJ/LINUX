@@ -49,4 +49,10 @@ since it is a polling condition (blocking) concurrency with child and process is
 
 **Q**  
 Why is 256 not 1?  value retrurned by child,also known as sets child signal  
+![alt text](Image/termination.png)
+
+Using wait orphan child can be prevented and child can be removed from zombie status.  
+In normal termination the return status /exit status is called by 2 byte higher 8 byte therefore s becomes 256.  
+If killed by signal lower byte will hold signal number  
+if kill -9 pid then the 2 byte will contain 9.
 
