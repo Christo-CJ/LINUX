@@ -19,3 +19,34 @@ Upon successful waiting the wait systemcall returns the child id upon failure re
 If we uses wait in parent two problem can be solved  
 - child is removed from `zombie`
 - child never becomes an `Orphan`
+
+```c
+#include"header.h"
+void main()
+{
+if(fork()==0)
+{
+printf("In child pid=%d\n",getpid())
+sleep(15);
+printf("In child after sleep..\n");
+}
+else
+{
+int r,s;
+printf("In parent pid=%d\n",getpid())
+r=wait(&s);
+printf("In parent after wait r=%d,s=%d\n",r,s);
+while(1);  //r=child pid s=256
+}
+}
+```
+variables filled by process manager child returns exit status to process manager,process manager then manages. 
+
+
+## Disadvantages of wait()
+
+since it is a polling condition (blocking) concurrency with child and process is lost.
+
+**Q**  
+Why is 256 not 1?  value retrurned by child,also known as sets child signal  
+
