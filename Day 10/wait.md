@@ -33,12 +33,12 @@ waitpid(1,0,0) waiting for the child which terminates first and collect informat
 
   ## WNOHANG
 
-   while(1)
-  {
+   while(1)  
+  {  
   waitpid(y+2,&s,0);
 
 
-  }
+  }  
 
   blocks the process
 
