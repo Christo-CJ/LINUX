@@ -1,4 +1,4 @@
-Wait system call can be used in two ways  
+Wait system call can be used in two ways    
 - wait(&s);  here parent is waiting for child and also collecting status
 - wait(0); waiting for child termination gut intrested  to collect the status.
 
