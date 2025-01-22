@@ -1,2 +1,2 @@
 # LINUX
-75 days of linux
+30 days of linux
