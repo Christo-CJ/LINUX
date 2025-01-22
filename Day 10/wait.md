@@ -13,7 +13,7 @@ waiting for the child which terminates first.
 
 waitpid(1,0,0) waiting for the child which terminates first and collect information.  
 
-
+  
 # Option argument in waitpid()
 
 - WUNTRACED
