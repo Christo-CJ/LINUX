@@ -1,6 +1,6 @@
 Wait system call can be used in two ways    
 - wait(&s);  here parent is waiting for child and also collecting status
-- wait(0); waiting for child termination gut intrested  to collect the status.
+- wait(0); waiting for child termination gut intrested  to collect the status.  
 
 -> Waitpid(y+2,&s,0);  
 In this case parent is waiting for y+2 to terminate and also collecting the status information.  
