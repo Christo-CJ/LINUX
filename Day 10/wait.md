@@ -9,7 +9,7 @@ In this case parent is waiting for y+2 to terminate and also collecting the stat
 Parent is waiting y+2 to terminate but not interested to collect the status.
 
 wait(&s)==waipid(-1,&s,0);  
-waiting for the child which terminates first.  
+waiting for the child which terminates first.    
 
 waitpid(1,0,0) waiting for the child which terminates first and collect information.  
 
