@@ -5,7 +5,7 @@ A CPU scheduler unit running in disputer is responsible for selecting the next p
 Once process is loaded then it is loaded into job queue(PCB stored).  
  
 The long term schedule moves the PCB in job is loaded into ready queue.   
-For queue events with scanf/external events the PCB is loaded into device queue done by long term scheduler.   
+For queue events with scanf/external events the PCB is loaded into device queue done by long term scheduler.    
 
 For simple system there is no long term scheduler the work is taken care by CPU.
 
