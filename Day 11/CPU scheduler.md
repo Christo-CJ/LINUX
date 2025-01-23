@@ -16,7 +16,7 @@ For simple system there is no long term scheduler the work is taken care by CPU.
 ## Premptive Scheduling
 After time slice if the process stays then forceful removing is premptive.  
 Non premptive: 
-process itself leaving before the time slice expires these scheduling are done by process manager.  
+process itself leaving before the time slice expires these scheduling are done by process manager.   
 
 ## Scheduling policies
 - FIFO
