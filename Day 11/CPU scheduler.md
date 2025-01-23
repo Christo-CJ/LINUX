@@ -1,5 +1,5 @@
 ## CPU Scheduler
-A CPU scheduler unit running in disputer is responsible for selecting the next process.  
+A CPU scheduler unit running in disputer is responsible for selecting the next process.   
 
 ## Scheduling Queues
 Once process is loaded then it is loaded into job queue(PCB stored).  
