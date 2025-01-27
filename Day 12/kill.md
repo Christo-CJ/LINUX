@@ -1,5 +1,5 @@
 ## KILL(2) 
-Kill send signal to a process  
+Kill send signal to a process   
 
 ```c
 #include<sys/types.h>
