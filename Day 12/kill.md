@@ -13,7 +13,7 @@ void main(int argc,char** argv)
 {
 if(argc!=3)
 {
-printf("usage ./a.out signum pid\n");
+printf("usage ./a.out signum pid\n"); 
 return;
 }
 kill(atoi(argv[2]),atoi(argv[1]));
