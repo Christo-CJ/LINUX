@@ -23,7 +23,7 @@ perrot("kill");
 using the signal either signal can be sent to other process or we can send to itself  
 
 ```
-kill(getpif(),SIGNUM);
+kill(getpif(),SIGNUM); 
 ```
 
 ## RAISE(3)
