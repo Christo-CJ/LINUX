@@ -28,7 +28,7 @@ kill(getpif(),SIGNUM);
 
 ## RAISE(3)
 
-Raise - send signal to caller  
+Raise - send signal to caller   
 ```
 #include<signal.h>
 int raise(int sig);
