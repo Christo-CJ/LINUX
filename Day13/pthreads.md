@@ -28,7 +28,7 @@ In the late 1980s and early 1990s, several different threading APIs existed. In 
 
 6) Initializes a mutex and sets its attributes.
   
-`int pthread_mutex_init (pthread_mutex_t *mutex, pthread_mutexattr_t *attr);`
+`int pthread_mutex_init (pthread_mutex_t *mutex,pthread_mutexattr_t *attr);`
 
 7) Deletes a mutex.
     
