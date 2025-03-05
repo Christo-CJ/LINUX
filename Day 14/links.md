@@ -11,3 +11,12 @@ All native Linux and UNIX file systems support hard links. However, many non-UNI
 From the shell, we can create new hard links to an existing file using the In command
 
 $ ls -li
+
+## Symbolic (Soft) Links
+
+A symbolic link, also sometimes called a soft link, is a special file type whose data is the name of another file. From the shell, symbolic links are created using the In-s command.
+
+$
+The pathname to which a symbolic link refers may be either absolute or relative. A relative symbolic link is interpreted relative to the location of the link itself.
+
+Symbolic links don't have the same status as hard links. In particular, a symbolic link is not included in the link count of the file to which it refers. Therefore, if the filename to which the symbolic link refers is removed, the symbolic link itself continues to exist, even though it can no longer be dereferenced (followed). You can say that it has become a dangling link. It is even possible to create a symbolic link to a filename that doesn't exist at the time the link is created. Since a symbolic link refers to a filename, rather than an i-node number, it can be used to link to a file in a different file system. Symbolic links also do not suffer the other limitation of hard links: you can create symbolic links to directories.
