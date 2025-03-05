@@ -7,3 +7,35 @@ $cat/proc/filesystems
 To identify your Linux file system you can use file command,
 
 $ sudo file -sL/dev/sda1
+
+# File-system structure
+
+The basic unit for allocating space in a file system is a logical block, which is some multiple of contiguous physical blocks on the disk device on which the file system resides. For example, the logical block size on ext2 is 1024, 2048, or 4096 bytes.
+
+Disk
+
+partition
+
+partition
+
+partition
+
+File
+
+Boot Block
+
+Super Block
+
+i-node Block
+
+Data Block
+
+System
+
+Layout of Disk Partition and File System
+
+A file system contains the following parts:
+
+1) Boot block: This is always the first block in a file system. The boot block is not used by the file system; rather, it contains information used to boot the operating system. Although only one boot block is needed by the operating system, all file systems have a boot block (most of which are unused).
+
+2) Superblock: This is a single block, immediately following the boot block, which contains parameter information about the file system, including:
