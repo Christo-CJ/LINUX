@@ -38,4 +38,9 @@ A file system contains the following parts:
 
 1) Boot block: This is always the first block in a file system. The boot block is not used by the file system; rather, it contains information used to boot the operating system. Although only one boot block is needed by the operating system, all file systems have a boot block (most of which are unused).
 
-2) Superblock: This is a single block, immediately following the boot block, which contains parameter information about the file system, including:
+2) Superblock: This is a single block, immediately following the boot block, which contains parameter information about the file system.
+Different file systems residing on the same physical device can be of different types and sizes, and have different parameter settings (e.g., block size). This is one of the reasons for splitting a disk into multiple partitions.
+
+3) I-node table: Each file or directory in the file system has a unique entry in the i-node table. This entry records various types of information about the file. The i-node table is sometimes also called the i-list.
+
+4) Data blocks: The great majority of space in a file system is used for the blocks of data that form the files and directories residing in the file system.
