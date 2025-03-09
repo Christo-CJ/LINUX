@@ -1,0 +1,3 @@
+# Contiguous Memory Allocation
+
+The main memory must accommodate both the operating system and the various user processes. Therefore it is need to allocate the parts of the main memory in the most efficient way possible. The one way is contiguous memory allocation. The memory is usually divided into two partitions: one for the resident operating system and one for the user processes. You can place the operating system in either low memory or high memory. The major factor affecting this decision is the location of the interrupt vector. Since the interrupt vector is offen in low memory. programmers usually place the operating system in low memory as well
